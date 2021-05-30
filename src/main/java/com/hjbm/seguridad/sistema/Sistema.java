@@ -2,9 +2,17 @@ package com.hjbm.seguridad.sistema;
 
 import com.hjbm.seguridad.empresa.Empresa;
 import com.hjbm.seguridad.estado.Estado;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 @Entity(name = "Sistema")
 @Table(name = "sistema")
 public class Sistema {
@@ -60,60 +68,9 @@ public class Sistema {
     )
     private Estado estado;
 
-    public Sistema() {
-    }
-
     public Sistema(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public Empresa getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
-    }
-
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-    }
-
-    @Override
-    public String toString() {
-        return "Sistema{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                '}';
-    }
 }

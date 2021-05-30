@@ -55,6 +55,8 @@ public class PersonaConfig {
 
 
             personaRepository.saveAll(List.of(hector, marce));
+
+            System.out.println(hector);
         };
     }
 }

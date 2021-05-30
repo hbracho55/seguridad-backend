@@ -3,11 +3,19 @@ package com.hjbm.seguridad.persona;
 import com.hjbm.seguridad.empresa.Empresa;
 import com.hjbm.seguridad.estado.Estado;
 import com.hjbm.seguridad.ubicacion.Ubicacion;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 @Entity(name = "Persona")
 @Table(name = "persona",
         uniqueConstraints = {
@@ -117,9 +125,6 @@ public class Persona {
     )
     private Estado estado;
 
-    public Persona() {
-    }
-
     public Persona(String nombre,
                    String apellido,
                    String email,
@@ -147,123 +152,4 @@ public class Persona {
         this.estado = estado;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getNroIdent() {
-        return nroIdent;
-    }
-
-    public void setNroIdent(String nroIdent) {
-        this.nroIdent = nroIdent;
-    }
-
-    public String getNroTelef() {
-        return nroTelef;
-    }
-
-    public void setNroTelef(String nroTelef) {
-        this.nroTelef = nroTelef;
-    }
-
-    public String getNroTelefInterno() {
-        return nroTelefInterno;
-    }
-
-    public void setNroTelefInterno(String nroTelefInterno) {
-        this.nroTelefInterno = nroTelefInterno;
-    }
-
-    public String getNroEmpleado() {
-        return nroEmpleado;
-    }
-
-    public void setNroEmpleado(String nroEmpleado) {
-        this.nroEmpleado = nroEmpleado;
-    }
-
-    public String getCargo() {
-        return cargo;
-    }
-
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public Empresa getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
-    }
-
-    public Ubicacion getUbicacion() {
-        return ubicacion;
-    }
-
-    public void setUbicacion(Ubicacion ubicacion) {
-        this.ubicacion = ubicacion;
-    }
-
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-    }
-
-    @Override
-    public String toString() {
-        return "Persona{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", email='" + email + '\'' +
-                ", nroIdent='" + nroIdent + '\'' +
-                ", nroTelef='" + nroTelef + '\'' +
-                ", nroTelefInterno='" + nroTelefInterno + '\'' +
-                ", nroEmpleado='" + nroEmpleado + '\'' +
-                ", cargo='" + cargo + '\'' +
-                ", direccion='" + direccion + '\'' +
-                '}';
-    }
 }

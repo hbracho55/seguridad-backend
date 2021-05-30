@@ -2,9 +2,17 @@ package com.hjbm.seguridad.empresa;
 
 import com.hjbm.seguridad.estado.Estado;
 import com.hjbm.seguridad.sistema.Sistema;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 @Entity(name = "Empresa")
 @Table(name = "empresa")
 public class Empresa {
@@ -51,10 +59,6 @@ public class Empresa {
     )
     private Estado estado;
 
-    public Empresa() {
-
-    }
-
     public Empresa(String nombre, String descripcion, String iniciales, Estado estado) {
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -62,53 +66,4 @@ public class Empresa {
         this.estado = estado;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getIniciales() {
-        return iniciales;
-    }
-
-    public void setIniciales(String iniciales) {
-        this.iniciales = iniciales;
-    }
-
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-    }
-
-    @Override
-    public String toString() {
-        return "Empresa{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", iniciales='" + iniciales + '\'' +
-                '}';
-    }
 }

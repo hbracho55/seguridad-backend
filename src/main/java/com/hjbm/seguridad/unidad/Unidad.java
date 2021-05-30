@@ -4,9 +4,17 @@ import com.hjbm.seguridad.empresa.Empresa;
 import com.hjbm.seguridad.estado.Estado;
 import com.hjbm.seguridad.jerarquia.Jerarquia;
 import com.hjbm.seguridad.ubicacion.Ubicacion;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 @Entity(name = "Unidad")
 @Table(name = "unidad")
 public class Unidad {
@@ -91,9 +99,6 @@ public class Unidad {
     )
     private Estado estado;
 
-    public Unidad() {
-    }
-
     public Unidad(String nombre,
                   String descripcion,
                   Long idPadre,
@@ -111,77 +116,4 @@ public class Unidad {
         this.estado = estado;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public Long getIdPadre() {
-        return idPadre;
-    }
-
-    public void setIdPadre(Long idPadre) {
-        this.idPadre = idPadre;
-    }
-
-    public Jerarquia getJerarquia() {
-        return jerarquia;
-    }
-
-    public void setJerarquia(Jerarquia jerarquia) {
-        this.jerarquia = jerarquia;
-    }
-
-    public Ubicacion getUbicacion() {
-        return ubicacion;
-    }
-
-    public void setUbicacion(Ubicacion ubicacion) {
-        this.ubicacion = ubicacion;
-    }
-
-    public Empresa getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
-    }
-
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-    }
-
-    @Override
-    public String toString() {
-        return "Unidad{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", idPadre=" + idPadre +
-                '}';
-    }
 }
